@@ -15,7 +15,8 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="foodwallfy"
         android:icon="@mipmap/launcher_icon"
-        android:roundIcon="@mipmap/launcher_icon_round">
+        android:roundIcon="@mipmap/launcher_icon_round"
+        android:requestLegacyExternalStorage="true">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
