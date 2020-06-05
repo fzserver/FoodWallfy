@@ -1,0 +1,940 @@
+{
+    "gradients": [
+        {
+            "id": 74,
+            "name": "New Life",
+            "colors": [
+                "#43E97B",
+                "#38F9D7"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 73,
+            "name": "Malibu Beach",
+            "colors": [
+                "#4FACFE",
+                "#00F2FE"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 72,
+            "name": "Cloudy Knoxville",
+            "colors": [
+                "#FDFBFB",
+                "#EBEDEE"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 71,
+            "name": "Ripe Malinka",
+            "colors": [
+                "#F093FB",
+                "#F5576C"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 70,
+            "name": "Deep Blue",
+            "colors": [
+                "#E0C3FC",
+                "#8EC5FC"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 69,
+            "name": "Mean Fruit",
+            "colors": [
+                "#FCCB90",
+                "#D57EEB"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 68,
+            "name": "Amy Crisp",
+            "colors": [
+                "#A6C0FE",
+                "#F68084"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 67,
+            "name": "Heavy Rain",
+            "colors": [
+                "#CFD9DF",
+                "#E2EBF0"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 66,
+            "name": "Tempting Azure",
+            "colors": [
+                "#84FAB0",
+                "#8FD3F4"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 65,
+            "name": "Dusty Grass",
+            "colors": [
+                "#D4FC79",
+                "#96E6A1"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 64,
+            "name": "Winter Neva",
+            "colors": [
+                "#A1C4FD",
+                "#C2E9FB"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 63,
+            "name": "Frozen Dreams",
+            "colors": [
+                "#FDCBF1",
+                "#E6DEE9"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 62,
+            "name": "Rainy Ashville",
+            "colors": [
+                "#FBC2EB",
+                "#A6C1EE"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 61,
+            "name": "Sunny Morning",
+            "colors": [
+                "#F6D365",
+                "#FDA085"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 60,
+            "name": "Lady Lips",
+            "colors": [
+                "#FF9A9E",
+                "#FECFEF"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 59,
+            "name": "Young Passion",
+            "colors": [
+                "#FF8177",
+                "#FF867A",
+                "#FF8c7F",
+                "#F99185",
+                "#CF556C",
+                "#B12A5B"
+            ],
+            "stops": [
+                0.0,
+                0.0,
+                0.21,
+                0.52,
+                0.78,
+                1.0
+            ]
+        },
+        {
+            "id": 58,
+            "name": "Juicy Peach",
+            "colors": [
+                "#FFECD2",
+                "#FCB69F"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 57,
+            "name": "Spring Warmth",
+            "colors": [
+                "#FAD0C4",
+                "#FFD1FF"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 56,
+            "name": "Night Fade",
+            "colors": [
+                "#A18CD1",
+                "#FBC2EB"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 55,
+            "name": "Warm Flame",
+            "colors": [
+                "#FF9A9E",
+                "#FAD0C4"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 54,
+            "name": "Sky Blue",
+            "colors": [
+                "#15EDED",
+                "#029CF5"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 53,
+            "name": "Black Sexy",
+            "colors": [
+                "#90203F",
+                "#537895"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 52,
+            "name": "Thoda Sexy",
+            "colors": [
+                "#F58573",
+                "#5F79F4"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 51,
+            "name": "Orange Sexy",
+            "colors": [
+                "#FF9B30",
+                "#F8FF3F"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 50,
+            "name": "Blue Sexy",
+            "colors": [
+                "#46A3B7",
+                "#86F1DE"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 49,
+            "name": "Violet Sexy",
+            "colors": [
+                "#52A7EA",
+                "#712E98"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 48,
+            "name": "Green Sexy",
+            "colors": [
+                "#92D000",
+                "#E1EB01"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 47,
+            "name": "Red Sexy",
+            "colors": [
+                "#F6356F",
+                "#FF5F50"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 46,
+            "name": "Pink Blue",
+            "colors": [
+                "#CC0099",
+                "#6600FF"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 45,
+            "name": "Blue Green",
+            "colors": [
+                "#0099CC",
+                "#99FF66"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 44,
+            "name": "Yellow Orange",
+            "colors": [
+                "#FFFF00",
+                "#FF6600"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 43,
+            "name": "Pink Red",
+            "colors": [
+                "#FF3399",
+                "#FF0000"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 42,
+            "name": "Blue Black",
+            "colors": [
+                "#37474F",
+                "#000000"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 1,
+            "name": "Roseanna",
+            "colors": [
+                "#FFAFBD",
+                "#FFC3A0"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Sexy Blue",
+            "colors": [
+                "#2193B0",
+                "#6DD5ED"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Purple Love",
+            "colors": [
+                "#CC2B5E",
+                "#753A88"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Piglet",
+            "colors": [
+                "#EE9CA7",
+                "#FFDDE1"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Mauve",
+            "colors": [
+                "#42275A",
+                "#734B6D"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 6,
+            "name": "50 Shades of Grey",
+            "colors": [
+                "#BDC3C7",
+                "#2C3E50"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 7,
+            "name": "A Lost Memory",
+            "colors": [
+                "#DE6262",
+                "#FFB88C"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 8,
+            "name": "Socialive",
+            "colors": [
+                "#06BEB6",
+                "#48B1BF"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 9,
+            "name": "Cherry",
+            "colors": [
+                "#EB3349",
+                "#F45C43"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 10,
+            "name": "Pinky",
+            "colors": [
+                "#DD5E89",
+                "#F7BB97"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 11,
+            "name": "Lush",
+            "colors": [
+                "#56AB2F",
+                "#A8E063"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 12,
+            "name": "Kashmir",
+            "colors": [
+                "#614385",
+                "#516395"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 13,
+            "name": "Tranquil",
+            "colors": [
+                "#EECDA3",
+                "#EF629F"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 14,
+            "name": "Pale Wood",
+            "colors": [
+                "#EACDA3",
+                "#D6AE7B"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 15,
+            "name": "Green Beach",
+            "colors": [
+                "#02AAB0",
+                "#00CDAC"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 16,
+            "name": "Sha La La",
+            "colors": [
+                "#D66D75",
+                "#E29587"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 17,
+            "name": "Frost",
+            "colors": [
+                "#000428",
+                "#004E92"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 18,
+            "name": "Almost",
+            "colors": [
+                "#DDD6F3",
+                "#FAACA8"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 19,
+            "name": "Virgin America",
+            "colors": [
+                "#7B4397",
+                "#DC2430"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 20,
+            "name": "Endless River",
+            "colors": [
+                "#43CEA2",
+                "#185A9D"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 21,
+            "name": "Purple White",
+            "colors": [
+                "#BA5370",
+                "#F4E2D8"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 22,
+            "name": "Bloody Mary",
+            "colors": [
+                "#FF512F",
+                "#DD2476"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 23,
+            "name": "Can you feel the love tonight",
+            "colors": [
+                "#4568DC",
+                "#B06AB3"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 24,
+            "name": "Bourbon",
+            "colors": [
+                "#EC6F66",
+                "#F3A183"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 25,
+            "name": "Dusk",
+            "colors": [
+                "#FFD89B",
+                "#19547B"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 26,
+            "name": "Relay",
+            "colors": [
+                "#3A1C71",
+                "#D76D77",
+                "#FFAF7B"
+            ],
+            "stops": [
+                0.0,
+                0.3333333333333333,
+                0.6666666666666666
+            ]
+        },
+        {
+            "id": 27,
+            "name": "Decent",
+            "colors": [
+                "#4CA1AF",
+                "#C4E0E5"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 28,
+            "name": "Sweet Morning",
+            "colors": [
+                "#FF5F6D",
+                "#FFC371"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 29,
+            "name": "Scooter",
+            "colors": [
+                "#36D1DC",
+                "#5B86E5"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 30,
+            "name": "Celestial",
+            "colors": [
+                "#C33764",
+                "#1D2671"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 31,
+            "name": "Royal",
+            "colors": [
+                "#141E30",
+                "#243B55"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 32,
+            "name": "Ed’s Sunset",
+            "colors": [
+                "#FF7E5F",
+                "#FEB47B"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 33,
+            "name": "Peach",
+            "colors": [
+                "#ED4264",
+                "#FFEDBC"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 34,
+            "name": "Sea Blue",
+            "colors": [
+                "#2B5876",
+                "#4E4376"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 35,
+            "name": "Orange Coral",
+            "colors": [
+                "#FF9966",
+                "#FF5E62"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 36,
+            "name": "Aubergine",
+            "colors": [
+                "#AA076B",
+                "#61045F"
+            ],
+            "stops": [
+                0.0,
+                1.0
+            ]
+        },
+        {
+            "id": 37,
+            "name": "Rainbow",
+            "colors": [
+                "#9400D3",
+                "#4B0082",
+                "#0000FF",
+                "#00FF00",
+                "#FFFF00",
+                "#FF7F00",
+                "#FF0000"
+            ],
+            "stops": [
+                0.0,
+                0.14285714285714285,
+                0.2857142857142857,
+                0.42857142857142855,
+                0.5714285714285714,
+                0.7142857142857143,
+                0.8571428571428571
+            ]
+        },
+        {
+            "id": 38,
+            "name": "Sun",
+            "colors": [
+                "#FFF57B",
+                "#FFE469",
+                "#FECC51",
+                "#FCB033",
+                "#FA961B",
+                "#FA8607"
+            ],
+            "stops": [
+                0.0,
+                0.16666666666666666,
+                0.3333333333333333,
+                0.5,
+                0.6666666666666666,
+                0.8333333333333334
+            ]
+        },
+        {
+            "id": 39,
+            "name": "Hot",
+            "colors": [
+                "#FE0000",
+                "#FE3F02",
+                "#F97C00",
+                "#FB9E00",
+                "#FBD400",
+                "#FDFD04"
+            ],
+            "stops": [
+                0.0,
+                0.16666666666666666,
+                0.3333333333333333,
+                0.5,
+                0.6666666666666666,
+                0.8333333333333334
+            ]
+        },
+        {
+            "id": 40,
+            "name": "Instagram",
+            "colors": [
+                "#F58529",
+                "#FEDA77",
+                "#DD2A7B",
+                "#8134AF",
+                "#515BD4"
+            ],
+            "stops": [
+                0.0,
+                0.2,
+                0.4,
+                0.6,
+                0.8
+            ]
+        },
+        {
+            "id": 41,
+            "name": "Quantifying",
+            "colors": [
+                "#0162A7",
+                "#3E9FB2",
+                "#FEB500",
+                "#CD9489",
+                "#B41D6C"
+            ],
+            "stops": [
+                0.0,
+                0.2,
+                0.4,
+                0.6,
+                0.8
+            ]
+        }
+    ]
+}

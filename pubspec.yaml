@@ -1,0 +1,72 @@
+# App Name
+name: foodwallfy
+
+# App Description
+description: A Food Wallpapers app.
+
+# App Version for both Android & iOS
+version: 1.0.1+2
+
+# Dart SDK Version
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+# App Packages from pub.dev for both debug & release mode & for both Android & iOS
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^0.1.2
+  sqflite: ^1.3.0+2
+  connectivity: ^0.4.8+6
+  flutter_spinkit: ^4.1.2+1
+  shared_preferences: ^0.5.7+3
+  cached_network_image: ^2.2.0+1
+  flutter_staggered_grid_view: ^0.3.0
+  path_provider: ^1.6.9
+  esys_flutter_share: ^1.0.2
+  permission_handler: ^4.2.0+hotfix.2
+  file_utils: ^0.1.4
+  package_info: ^0.4.0+18
+  wallpaper: ^1.0.3
+  fluttertoast: ^4.0.1
+  firebase_analytics: ^5.0.14
+  in_app_purchase: ^0.3.4
+  firebase_admob: ^0.9.3+2
+  firebase_crashlytics: ^0.1.3+3
+  firebase_performance: ^0.3.2
+  provider: ^4.1.2
+  http: ^0.12.1
+  fzregex: ^1.0.1
+  frazile_algorithm: ^1.0.0
+  fztimeago: ^1.0.0
+
+# App Packages from pub.dev only for debug mode for both Android & iOS
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  test: any
+  flutter_launcher_icons: ^0.7.5
+
+flutter_icons:
+  android: "launcher_icon_round"
+  ios: true
+  image_path: "assets/icon/icon_round.png"
+
+flutter:
+  uses-material-design: true
+
+  # Assets
+  # assets:
+  # - assets/
+
+  # Fonts
+  fonts:
+    - family: google
+      fonts:
+        - asset: assets/fonts/Product-Sans-Regular.ttf
+        - asset: assets/fonts/Product-Sans-Bold.ttf
+          weight: 500
+        - asset: assets/fonts/Product-Sans-Bold-Italic.ttf
+          style: italic
