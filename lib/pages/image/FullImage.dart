@@ -13,7 +13,6 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:foodwallfy/constants/colors.dart';
 import 'package:foodwallfy/pages/image/FullArguments.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:wallpaper/wallpaper.dart';
 import 'package:http/http.dart' as http;
 
 class FullImage extends StatefulWidget {
@@ -114,31 +113,31 @@ class _FullImageState extends State<FullImage> {
     }
   }
 
-  setwallpaper(String imgUrl) async {
-    Stream<String> progressString = Wallpaper.imageDownloadProgress(imgUrl);
-    progressString.listen((data) {
-      setState(() {
-        downloading = true;
-      });
-    }, onDone: () async {
-      await Wallpaper.bothScreen();
-      setState(() {
-        downloading = false;
-        Fluttertoast.showToast(
-          msg: 'Wallpaper Set Successfully.',
-          toastLength: Toast.LENGTH_LONG,
-          gravity: ToastGravity.CENTER,
-          // timeInSecForIos: 5,
-          backgroundColor: Colors.white70,
-          textColor: Color.fromRGBO(9, 9, 26, 1.0),
-          fontSize: 18.0,
-        );
-      });
-      await Wallpaper.bothScreen();
-    });
-    // await Wallpaper.homeScreen();
-    // if (!mounted) return;
-  }
+  // setwallpaper(String imgUrl) async {
+  //   // Stream<String> progressString = Wallpaper.imageDownloadProgress(imgUrl);
+  //   progressString.listen((data) {
+  //     setState(() {
+  //       downloading = true;
+  //     });
+  //   }, onDone: () async {
+  //     await Wallpaper.bothScreen();
+  //     setState(() {
+  //       downloading = false;
+  //       Fluttertoast.showToast(
+  //         msg: 'Wallpaper Set Successfully.',
+  //         toastLength: Toast.LENGTH_LONG,
+  //         gravity: ToastGravity.CENTER,
+  //         // timeInSecForIos: 5,
+  //         backgroundColor: Colors.white70,
+  //         textColor: Color.fromRGBO(9, 9, 26, 1.0),
+  //         fontSize: 18.0,
+  //       );
+  //     });
+  //     await Wallpaper.bothScreen();
+  //   });
+  //   // await Wallpaper.homeScreen();
+  //   // if (!mounted) return;
+  // }
 
   shareImg(String imgUrl) async {
     try {
@@ -322,7 +321,8 @@ class _FullImageState extends State<FullImage> {
                         left: MediaQuery.of(context).size.width * .84,
                         child: IconButton(
                           icon: Icon(Icons.wallpaper),
-                          onPressed: () => setwallpaper(args.lastImgPath),
+                          onPressed: () {},
+                          // => setwallpaper(args.lastImgPath),
                           color: Colors.white,
                         ),
                       ),
