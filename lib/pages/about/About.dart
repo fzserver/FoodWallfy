@@ -387,13 +387,20 @@ class _AboutState extends State<About> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: <Widget>[
-                                      CircleAvatar(
-                                        backgroundColor: Colors.orange,
-                                        backgroundImage: NetworkImage(
-                                          'http://bit.ly/fwpic',
+                                      CachedNetworkImage(
+                                        imageUrl: Frazile.profilePic,
+                                        placeholder: (context, url) =>
+                                            CircleAvatar(
+                                          backgroundColor: Colors.orange,
+                                          minRadius: 40.0,
+                                          maxRadius: 50.0,
                                         ),
-                                        minRadius: 40.0,
-                                        maxRadius: 50.0,
+                                        imageBuilder: (context, image) =>
+                                            CircleAvatar(
+                                          backgroundImage: image,
+                                          minRadius: 40.0,
+                                          maxRadius: 50.0,
+                                        ),
                                       ),
                                     ],
                                   ),

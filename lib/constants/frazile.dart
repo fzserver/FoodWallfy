@@ -98,4 +98,8 @@ class Frazile {
   static const String about = '/about';
   static const String settings = '/settings';
   static const String donate = '/donate';
+
+  //* Image Urls
+  static const String profilePic =
+      'https://instagram.fixc4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/90319768_530732907836311_5744324372475150336_n.jpg?_nc_ht=instagram.fixc4-1.fna.fbcdn.net&_nc_ohc=sSEuTAPSszQAX9IWXQu&oh=fe3816d632b89cf744fe48eafa95e30e&oe=5F00F61D';
 }

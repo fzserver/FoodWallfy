@@ -24,7 +24,7 @@ dependencies:
   flutter_staggered_grid_view: ^0.3.0
   path_provider: ^1.6.9
   esys_flutter_share: ^1.0.2
-  permission_handler: ^4.2.0+hotfix.2
+  permission_handler: ^4.0.0
   file_utils: ^0.1.4
   package_info: ^0.4.0+18
   wallpaper: ^1.0.3
@@ -39,6 +39,7 @@ dependencies:
   fzregex: ^1.0.1
   frazile_algorithm: ^1.0.0
   fztimeago: ^1.0.0
+  dio: ^3.0.9
 
 # App Packages from pub.dev only for debug mode for both Android & iOS
 dev_dependencies:

@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dio/dio.dart';
 import 'package:esys_flutter_share/esys_flutter_share.dart';
 import 'package:file_utils/file_utils.dart';
 import 'package:flutter/foundation.dart';
@@ -25,39 +26,44 @@ class _FullImageState extends State<FullImage> {
   var progress = "";
   PermissionGroup permission1 = PermissionGroup.storage;
   static final Random random = Random();
+  Dio dio = Dio();
 
   void downloadFile(String imgUrl) async {
     bool checkPermission1;
     final List<PermissionGroup> permissions = <PermissionGroup>[permission1];
-    await PermissionHandler()
-        .checkPermissionStatus(permission1)
-        .then((PermissionStatus status) {
-      setState(() {
-        if (status == PermissionStatus.denied) {
-          checkPermission1 = false;
-        } else {
-          if (status == PermissionStatus.granted) {
-            checkPermission1 = true;
-          }
-        }
-      });
-    });
+    await PermissionHandler().checkPermissionStatus(permission1).then(
+      (PermissionStatus status) {
+        setState(
+          () {
+            if (status == PermissionStatus.denied) {
+              checkPermission1 = false;
+            } else {
+              if (status == PermissionStatus.granted) {
+                checkPermission1 = true;
+              }
+            }
+          },
+        );
+      },
+    );
     // print(checkPermission1);
     if (checkPermission1 == false) {
       await PermissionHandler().requestPermissions(permissions);
-      await PermissionHandler()
-          .checkPermissionStatus(permission1)
-          .then((PermissionStatus status) {
-        setState(() {
-          if (status == PermissionStatus.denied) {
-            checkPermission1 = false;
-          } else {
-            if (status == PermissionStatus.granted) {
-              checkPermission1 = true;
-            }
-          }
-        });
-      });
+      await PermissionHandler().checkPermissionStatus(permission1).then(
+        (PermissionStatus status) {
+          setState(
+            () {
+              if (status == PermissionStatus.denied) {
+                checkPermission1 = false;
+              } else {
+                if (status == PermissionStatus.granted) {
+                  checkPermission1 = true;
+                }
+              }
+            },
+          );
+        },
+      );
     }
     if (checkPermission1 == true) {
       // var dir = await getExternalStorageDirectory();
@@ -66,36 +72,45 @@ class _FullImageState extends State<FullImage> {
 
       try {
         FileUtils.mkdir([dirloc]);
-        // await dio.download(imgUrl, dirloc + randid.toString() + ".jpg",
-
-        //     onReceiveProgress: (receivedBytes, totalBytes) {
-        //   setState(() {
-        //     // print(dirloc.toString());
-        //     downloading = true;
-        //     progress =
-        //         ((receivedBytes / totalBytes) * 100).toStringAsFixed(0) + "%";
-        //   });
-        // });
+        await dio.download(
+          imgUrl,
+          dirloc + randid.toString() + ".jpg",
+          onReceiveProgress: (receivedBytes, totalBytes) {
+            setState(
+              () {
+                // print(dirloc.toString());
+                downloading = true;
+                progress =
+                    ((receivedBytes / totalBytes) * 100).toStringAsFixed(0) +
+                        "%";
+              },
+            );
+          },
+        );
       } catch (e) {
         print(e);
       }
 
-      setState(() {
-        progress = "Download Completed.";
-        // Fluttertoast.showToast(
-        //     msg: 'Image Saved to Gallery.',
-        //     toastLength: Toast.LENGTH_LONG,
-        //     gravity: ToastGravity.CENTER,
-        //     timeInSecForIos: 5,
-        //     backgroundColor: Colors.white70,
-        //     textColor: Color.fromRGBO(9, 9, 26, 1.0),
-        //     fontSize: 18.0);
-        downloading = false;
-      });
+      setState(
+        () {
+          progress = "Download Completed.";
+          // Fluttertoast.showToast(
+          //     msg: 'Image Saved to Gallery.',
+          //     toastLength: Toast.LENGTH_LONG,
+          //     gravity: ToastGravity.CENTER,
+          //     timeInSecForIos: 5,
+          //     backgroundColor: Colors.white70,
+          //     textColor: Color.fromRGBO(9, 9, 26, 1.0),
+          //     fontSize: 18.0);
+          downloading = false;
+        },
+      );
     } else {
-      setState(() {
-        progress = "Permission Denied!";
-      });
+      setState(
+        () {
+          progress = "Permission Denied!";
+        },
+      );
     }
   }
 
