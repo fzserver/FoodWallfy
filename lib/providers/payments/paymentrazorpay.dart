@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
-class Payments with ChangeNotifier {
-  Payments();
+class PaymentRazorPay with ChangeNotifier {
+  PaymentRazorPay();
   Razorpay _razorpay;
 
   void intialize() {
