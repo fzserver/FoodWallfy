@@ -5,7 +5,7 @@ name: foodwallfy
 description: A Food Wallpapers app.
 
 # App Version for both Android & iOS
-version: 1.0.1+2
+version: 1.0.2+3
 
 # Dart SDK Version
 environment:
