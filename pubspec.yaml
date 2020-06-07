@@ -41,6 +41,7 @@ dependencies:
   stripe: ^2.0.4
   razorpay_flutter: ^1.2.1
   in_app_purchase: ^0.3.4
+  fzwallpaper: ^1.0.0
 
 # App Packages from pub.dev only for debug mode for both Android & iOS
 dev_dependencies:
