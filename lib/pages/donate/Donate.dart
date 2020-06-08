@@ -14,14 +14,14 @@ class _DonateState extends State<Donate> {
   @override
   void initState() {
     Provider.of<PaymentRazorPay>(context, listen: false).intialize();
-    Provider.of<PaymentStripe>(context, listen: false).intialize();
+    // Provider.of<PaymentStripe>(context, listen: false).intialize();
     super.initState();
   }
 
   @override
   void dispose() {
     Provider.of<PaymentRazorPay>(context, listen: false).dispose();
-    Provider.of<PaymentStripe>(context, listen: false).dispose();
+    // Provider.of<PaymentStripe>(context, listen: false).dispose();
     super.dispose();
   }
 
