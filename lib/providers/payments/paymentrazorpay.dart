@@ -34,7 +34,7 @@ class PaymentRazorPay with ChangeNotifier {
     );
   }
 
-  void openCheckout(int amount, String currency, contact, email, receipt,
+  openCheckout(int amount, String currency, contact, email, receipt,
       {String name = 'Donate', desc = 'Donation'}) async {
     var options = {
       'key': 'rzp_live_tH6FiVUcs8nlTt',
@@ -42,7 +42,7 @@ class PaymentRazorPay with ChangeNotifier {
       'currency': currency,
       'name': name,
       'description': desc,
-      'prefill': {'contact': contact, 'email': email},
+      // 'prefill': {'contact': contact, 'email': email},
       'external': {
         'wallets': ['paytm']
       },

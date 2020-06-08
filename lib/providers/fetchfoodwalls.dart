@@ -28,10 +28,10 @@ class FoodWalls with ChangeNotifier {
   Future<void> fetchData({int page}) async {
     page == 1 ? _isFetching = true : _isLoading = true;
     notifyListeners();
-    print(page.toString());
+    // print(page.toString());
     await _connection.checkConnection();
-    print('Con => ' + _connection.hasConnection.toString());
-    if (true) {
+    // print('Con => ' + _connection.hasConnection.toString());
+    if (_connection.hasConnection) {
       var response = await http.get(Frazile.baseURL +
           '?client_id=' +
           Frazile.clientId +
@@ -63,15 +63,16 @@ class FoodWalls with ChangeNotifier {
 
   List<FoodResult> getResponseJson() {
     List<FoodResult> newWalls = List<FoodResult>();
+    // List<FoodResult> wallsData;
     if (_jsonResonse.isNotEmpty) {
       Map<String, dynamic> json = jsonDecode(_jsonResonse);
       newWalls = Food.fromJson(json).results;
       if (wallsData == null) {
         wallsData = newWalls;
       } else {
-        newWalls.forEach((newWall) {
-          wallsData.add(newWall);
-        });
+        // newWalls.forEach((newWall) {
+        wallsData.addAll(newWalls);
+        // });
       }
       return wallsData;
     }
