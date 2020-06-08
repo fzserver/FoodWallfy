@@ -11,52 +11,68 @@ class FoodWalls with ChangeNotifier {
 
   String _jsonResonse = "";
   bool _isFetching = false;
+  bool _isLoading = false;
   ConnectionStatus _connection = ConnectionStatus.getInstance();
 
   bool get isFetching =>
       _isFetching; // It is checking whether data is fetched from the server or not yet.
 
+  bool get isLoading =>
+      _isLoading; // It is checking whether more data is fetched from the server or not yet.
+
+  void loadmore() async {
+    Frazile.page = Frazile.page + 1;
+    await fetchData(page: Frazile.page);
+  }
+
   Future<void> fetchData({int page}) async {
-    _isFetching = true;
+    page == 1 ? _isFetching = true : _isLoading = true;
     notifyListeners();
+    print(page.toString());
     await _connection.checkConnection();
-    print('Con => '+_connection.hasConnection.toString());
+    print('Con => ' + _connection.hasConnection.toString());
     if (true) {
+      var response = await http.get(Frazile.baseURL +
+          '?client_id=' +
+          Frazile.clientId +
+          '&query=' +
+          Frazile.query +
+          '&per_page=' +
+          Frazile.perPage.toString() +
+          '&orientation=' +
+          Frazile.orientation +
+          '&page=' +
+          page.toString() +
+          '');
 
-    var response = await http.get(Frazile.baseURL +
-        '?client_id=' +
-        Frazile.clientId +
-        '&query=' +
-        Frazile.query +
-        '&per_page=' +
-        Frazile.perPage.toString() +
-        '&orientation=' +
-        Frazile.orientation +
-        '&page=' +
-        page.toString() +
-        '');
-
-    if (response.statusCode == 200) {
-      _jsonResonse = response.body;
-    }
+      if (response.statusCode == 200) {
+        _jsonResonse = response.body;
+      }
     } else {
       _jsonResonse = 'No';
     }
 
-    _isFetching = false;
+    page == 1 ? _isFetching = false : _isLoading = false;
     notifyListeners();
   }
 
   String get getResponseText =>
       _jsonResonse; // Storing the API response from jsonResponse to a getResponseText
 
+  List<FoodResult> wallsData;
+
   List<FoodResult> getResponseJson() {
-    List<FoodResult> wallsData = List<FoodResult>();
+    List<FoodResult> newWalls = List<FoodResult>();
     if (_jsonResonse.isNotEmpty) {
       Map<String, dynamic> json = jsonDecode(_jsonResonse);
-      Food.fromJson(json).results.forEach((foodWall) {
-        wallsData.add(foodWall);
-      });
+      newWalls = Food.fromJson(json).results;
+      if (wallsData == null) {
+        wallsData = newWalls;
+      } else {
+        newWalls.forEach((newWall) {
+          wallsData.add(newWall);
+        });
+      }
       return wallsData;
     }
     return null;

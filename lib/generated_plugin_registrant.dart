@@ -14,7 +14,9 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 // ignore: public_member_api_docs
 void registerPlugins(PluginRegistry registry) {
   FirebaseCoreWeb.registerWith(registry.registrarFor(FirebaseCoreWeb));
-  FluttertoastWebPlugin.registerWith(registry.registrarFor(FluttertoastWebPlugin));
-  SharedPreferencesPlugin.registerWith(registry.registrarFor(SharedPreferencesPlugin));
+  FluttertoastWebPlugin.registerWith(
+      registry.registrarFor(FluttertoastWebPlugin));
+  SharedPreferencesPlugin.registerWith(
+      registry.registrarFor(SharedPreferencesPlugin));
   registry.registerMessageHandler();
 }
