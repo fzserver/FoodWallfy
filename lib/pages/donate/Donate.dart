@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foodwallfy/animations/donate.dart';
 import 'package:foodwallfy/constants/colors.dart';
 import 'package:foodwallfy/constants/frazile.dart';
+import 'package:foodwallfy/constants/gradients.dart';
 import 'package:foodwallfy/providers/payments/paymentStripe.dart';
 import 'package:foodwallfy/providers/payments/paymentrazorpay.dart';
 import 'package:provider/provider.dart';
@@ -10,11 +12,31 @@ class Donate extends StatefulWidget {
   _DonateState createState() => _DonateState();
 }
 
-class _DonateState extends State<Donate> {
+class _DonateState extends State<Donate> with SingleTickerProviderStateMixin {
+  Animation<double> animation;
+  AnimationController _animationController;
   @override
   void initState() {
     Provider.of<PaymentRazorPay>(context, listen: false).intialize();
     // Provider.of<PaymentStripe>(context, listen: false).intialize();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(
+        milliseconds: 1200,
+      ),
+    );
+    animation = Tween<double>(begin: 180.0, end: -7.0).animate(
+      CurvedAnimation(
+        curve: Curves.bounceInOut,
+        parent: _animationController,
+      ),
+    );
+    _animationController.forward();
+    animation.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
+        _animationController.dispose();
+      }
+    });
     super.initState();
   }
 
@@ -22,6 +44,9 @@ class _DonateState extends State<Donate> {
   void dispose() {
     Provider.of<PaymentRazorPay>(context, listen: false).dispose();
     // Provider.of<PaymentStripe>(context, listen: false).dispose();
+    if (_animationController.status != AnimationStatus.completed) {
+      _animationController.dispose();
+    }
     super.dispose();
   }
 
@@ -29,7 +54,7 @@ class _DonateState extends State<Donate> {
   Widget build(BuildContext context) {
     final paymentRazorPay =
         Provider.of<PaymentRazorPay>(context, listen: false);
-    final paymentStripe = Provider.of<PaymentStripe>(context, listen: false);
+    // final paymentStripe = Provider.of<PaymentStripe>(context, listen: false);
     return Scaffold(
       body: Column(
         children: [
@@ -292,39 +317,101 @@ class _DonateState extends State<Donate> {
                     ),
                   ),
                 ),
-                Center(
+                Positioned(
+                  top: MediaQuery.of(context).size.height * .11,
+                  left: 10.0,
+                  right: 10.0,
+                  bottom: 0.0,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      MaterialButton(
-                        color: Colors.pink,
-                        onPressed: () => paymentRazorPay.openCheckout(
-                            1000,
-                            'INR',
-                            '9988446981',
-                            'frazile.com@gmail.com',
-                            'donate1'),
-                        child: Text(
-                          'Donate INR 10.00 on RazorPay',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                      FittedBox(
+                        child: DonateItem(
+                          image: 'comedy',
+                          gradient: FzGradients.redSexyGradient,
+                          title: 'Donate \$1 by RazorPay',
+                          color: FzGradients.redSexyGradient.colors[0],
+                          animation: animation,
+                          paymentMode: 'RazorPay',
                         ),
-                        textColor: Colors.white,
                       ),
-                      //                       MaterialButton(
-                      //   color: Colors.pink,
-                      //   onPressed: () => {},
-                      //   child: Text(
-                      //     'Donate INR 10.00 on Stripe',
-                      //     style: TextStyle(
-                      //       color: Colors.white,
-                      //     ),
-                      //   ),
-                      //   textColor: Colors.white,
-                      // ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      FittedBox(
+                        child: DonateItem(
+                          image: 'action',
+                          gradient: FzGradients.greenSexyGradient,
+                          title: 'Buy me a beer by RazorPay for \$10',
+                          color: FzGradients.greenSexyGradient.colors[0],
+                          animation: animation,
+                          paymentMode: 'RazorPay',
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      FittedBox(
+                        child: DonateItem(
+                          image: 'romance',
+                          gradient: FzGradients.pinkRedGradient,
+                          title: 'Buy me a iPhone by IAP for \$200',
+                          color: FzGradients.pinkRedGradient.colors[0],
+                          animation: animation,
+                          paymentMode: 'IAP',
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10.0,
+                      ),
+                      FittedBox(
+                        child: DonateItem(
+                          image: 'horror',
+                          gradient: FzGradients.skyBlueGradient,
+                          title: 'Buy me a MacBook by IAP for \$2000',
+                          color: FzGradients.skyBlueGradient.colors[0],
+                          animation: animation,
+                          paymentMode: 'IAP',
+                        ),
+                      ),
                     ],
                   ),
                 ),
+                // Center(
+                //   child: Column(
+                //     children: [
+                //       MaterialButton(
+                //         color: Colors.pink,
+                //         onPressed: () => paymentRazorPay.openCheckout(
+                //             1000,
+                //             'INR',
+                //             '9988446981',
+                //             'frazile.com@gmail.com',
+                //             'donate1'),
+                //         child: Text(
+                //           'Donate INR 10.00 on RazorPay',
+                //           style: TextStyle(
+                //             color: Colors.white,
+                //           ),
+                //         ),
+                //         textColor: Colors.white,
+                //       ),
+                //                       MaterialButton(
+                //   color: Colors.pink,
+                //   onPressed: () => {},
+                //   child: Text(
+                //     'Donate INR 10.00 on Stripe',
+                //     style: TextStyle(
+                //       color: Colors.white,
+                //     ),
+                //   ),
+                //   textColor: Colors.white,
+                // ),
+                // ],
+                // ),
+                // ),
                 // Center(
                 //   child: Text(
                 //     'Coming Soon',
