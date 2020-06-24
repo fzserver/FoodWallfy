@@ -432,7 +432,7 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     staggeredTileBuilder: (i) =>
                                         StaggeredTile.count(
-                                            2, i.isEven ? 2 : 3),
+                                            2, i.isEven ? 2 : 3,),
                                   ),
                                 ),
                               ),
@@ -481,7 +481,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       )
-                    : foods.getResponseText == 'No'
+                    : (foods.getResponseText == 'No')
                         ? Center(
                             child: Text(
                               'No Internet Connection',

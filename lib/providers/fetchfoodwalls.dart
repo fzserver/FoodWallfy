@@ -74,6 +74,7 @@ class FoodWalls with ChangeNotifier {
       //   wallsData.add(wall);
       // });
       wallsData.addAll(walls);
+      print(wallsData.toString());
       return wallsData;
     }
     return null;
