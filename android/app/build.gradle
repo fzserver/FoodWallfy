@@ -24,9 +24,9 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 // Apply the Crashlytics Gradle plugin
-apply plugin: 'com.google.firebase.crashlytics'
+// apply plugin: 'com.google.firebase.crashlytics'
 // Apply the Performance Monitoring plugin
-apply plugin: 'com.google.firebase.firebase-perf'
+// apply plugin: 'com.google.firebase.firebase-perf'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 

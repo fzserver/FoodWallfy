@@ -37,8 +37,8 @@
             <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
                 android:value="ca-app-pub-3595684883769922~4812413525" />
-                <meta-data
+                <!-- <meta-data
       android:name="firebase_performance_logcat_enabled"
-      android:value="true" />
+      android:value="true" /> -->
     </application>
 </manifest>
