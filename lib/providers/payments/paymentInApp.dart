@@ -5,7 +5,7 @@
 
 // class PaymentInAppPurchases with ChangeNotifier {
 //   PaymentInAppPurchases();
-  
+
 //   /// IAP Plugin Interface
 //   InAppPurchaseConnection _iap = InAppPurchaseConnection.instance;
 
@@ -35,7 +35,7 @@
 //   }
 
 //   void products() {
-//     for (var prod in _products) 
+//     for (var prod in _products)
 //       /// UI if already purchased
 //       if (_hasPurchased(prod.id) != null)
 //         ...[

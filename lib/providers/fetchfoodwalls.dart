@@ -6,12 +6,20 @@ import 'package:foodwallfy/services/responses.dart';
 import 'package:http/http.dart' as http;
 import '../constants/frazile.dart';
 
+/*
+ * 1. set global data variables
+ * 2. fetch data 
+ * 3. fetch more data 
+ * 4. merge more data to original data 
+ */
 class FoodWalls with ChangeNotifier {
   FoodWalls();
 
-  String _jsonResonse = "";
+  // String _jsonResonse = "";
   bool _isFetching = false;
   bool _isLoading = false;
+  List<FoodResult> wallsData = List<FoodResult>();
+
   ConnectionStatus _connection = ConnectionStatus.getInstance();
 
   bool get isFetching =>
@@ -22,15 +30,23 @@ class FoodWalls with ChangeNotifier {
 
   void loadmore() async {
     Frazile.page = Frazile.page + 1;
-    await fetchData(page: Frazile.page);
+    List<FoodResult> walls = await fetchData(page: Frazile.page);
+    wallsData.addAll(walls);
+    notifyListeners();
   }
 
-  Future<void> fetchData({int page}) async {
-    page == 1 ? _isFetching = true : _isLoading = true;
+  void getHomeData() async {
+    List<FoodResult> walls = await fetchData(page: 1);
+    wallsData.addAll(walls);
     notifyListeners();
-    print(page.toString());
+  }
+
+  Future<List<FoodResult>> fetchData({int page}) async {
+    page == 1 ? _isFetching = true : _isLoading = true;
+    String jsonResponse = '';
+    notifyListeners();
     await _connection.checkConnection();
-    // print('Con => ' + _connection.hasConnection.toString());
+
     if (_connection.hasConnection) {
       var response = await http.get(Frazile.baseURL +
           '?client_id=' +
@@ -46,37 +62,27 @@ class FoodWalls with ChangeNotifier {
           '');
 
       if (response.statusCode == 200) {
-        _jsonResonse = response.body;
+        jsonResponse = response.body;
       }
     } else {
-      _jsonResonse = 'No';
+      jsonResponse = 'No';
     }
 
     page == 1 ? _isFetching = false : _isLoading = false;
-
     notifyListeners();
-  }
 
-  String get getResponseText =>
-      _jsonResonse; // Storing the API response from jsonResponse to a getResponseText
-
-  List<FoodResult> wallsData = List<FoodResult>();
-
-  List<FoodResult> getResponseJson() {
-    // List<FoodResult> wallsData = List<FoodResult>();
     List<FoodResult> walls = List<FoodResult>();
-
-    if (_jsonResonse.isNotEmpty) {
-      Map<String, dynamic> json = jsonDecode(_jsonResonse);
+    if (jsonResponse.isNotEmpty) {
+      Map<String, dynamic> json = jsonDecode(jsonResponse);
       walls = Food.fromJson(json).results;
-      // walls.forEach((wall) {
-      //   // Result wallData = Result();
-      //   wallsData.add(wall);
-      // });
-      wallsData.addAll(walls);
-      print(wallsData.toString());
-      return wallsData;
     }
-    return null;
+    return walls;
   }
+
+  // String get getResponseText =>
+  //     jsonResponse; // Storing the API response from jsonResponse to a getResponseText
+
+  // List<FoodResult> walls = List<FoodResult>();
+
+  List<FoodResult> getResponseJson() => wallsData;
 }

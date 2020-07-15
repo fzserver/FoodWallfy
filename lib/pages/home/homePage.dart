@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
 
   BannerAd createBannerAd() => BannerAd(
       adUnitId: "ca-app-pub-3595684883769922/7247005176",
-      size: AdSize.smartBanner,
+      size: AdSize.banner,
       targetingInfo: targetInfo,
       listener: (MobileAdEvent event) {
         print("Banner event : $event");
@@ -56,8 +56,7 @@ class _HomePageState extends State<HomePage> {
     _bannerAd = createBannerAd()
       ..load()
       ..show();
-    Provider.of<FoodWalls>(context, listen: false)
-        .fetchData(page: Frazile.page);
+    Provider.of<FoodWalls>(context, listen: false).getHomeData();
   }
 
   @override
@@ -348,12 +347,14 @@ class _HomePageState extends State<HomePage> {
                               tooltip: "Menu",
                               onSelected: selectedMenuItem,
                               itemBuilder: (BuildContext context) {
-                                return menu.map((MenuItems menuItem) {
-                                  return PopupMenuItem<MenuItems>(
-                                    value: menuItem,
-                                    child: Text(menuItem.title),
-                                  );
-                                }).toList();
+                                return menu.map(
+                                  (MenuItems menuItem) {
+                                    return PopupMenuItem<MenuItems>(
+                                      value: menuItem,
+                                      child: Text(menuItem.title),
+                                    );
+                                  },
+                                ).toList();
                               },
                             ),
                           ),
@@ -432,7 +433,9 @@ class _HomePageState extends State<HomePage> {
                                     ),
                                     staggeredTileBuilder: (i) =>
                                         StaggeredTile.count(
-                                            2, i.isEven ? 2 : 3,),
+                                      2,
+                                      i.isEven ? 2 : 3,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -481,29 +484,29 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ],
                       )
-                    : (foods.getResponseText == 'No')
-                        ? Center(
-                            child: Text(
-                              'No Internet Connection',
-                              style: TextStyle(
-                                color: Colors.indigo,
-                                fontSize: 24.0,
-                                letterSpacing: 2.0,
-                                wordSpacing: 2.5,
-                              ),
-                            ),
-                          )
-                        : Center(
-                            child: Text(
-                              'Server Error!',
-                              style: TextStyle(
-                                color: Colors.indigo,
-                                fontSize: 24.0,
-                                letterSpacing: 2.0,
-                                wordSpacing: 2.5,
-                              ),
-                            ),
+                    // : (foods.getResponseText == 'No')
+                    //     ? Center(
+                    //         child: Text(
+                    //           'No Internet Connection',
+                    //           style: TextStyle(
+                    //             color: Colors.indigo,
+                    //             fontSize: 24.0,
+                    //             letterSpacing: 2.0,
+                    //             wordSpacing: 2.5,
+                    //           ),
+                    //         ),
+                    //       )
+                    : Center(
+                        child: Text(
+                          'Server Error!',
+                          style: TextStyle(
+                            color: Colors.indigo,
+                            fontSize: 24.0,
+                            letterSpacing: 2.0,
+                            wordSpacing: 2.5,
                           ),
+                        ),
+                      ),
           ),
         ],
       ),
