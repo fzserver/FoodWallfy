@@ -101,5 +101,5 @@ class Frazile {
 
   //* Image Urls
   static const String profilePic =
-      'https://scontent-bom1-2.cdninstagram.com/v/t51.2885-19/s320x320/90319768_530732907836311_5744324372475150336_n.jpg?_nc_ht=scontent-bom1-2.cdninstagram.com&_nc_ohc=TCo-oXAhTgEAX_5gZF2&oh=b8b6f89d78547b35ec368fcccd8dca77&oe=5F306C1D';
+      'https://parthaggarwal.com/assets/images/pics/IMG_20180506_153152.jpg';
 }
