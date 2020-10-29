@@ -15,7 +15,7 @@ class FzColors {
   static const Color darkCanvasColor = Color(0xFF000000);
   static const Color darkTextColor = Color(0xFFFFFFFF);
   static const Color darkIconColor = Color(0xFF000000);
-
+  static const Color darkIconColorClone = Color(0xFF00000);
   //* Gradients
   // static const Color pinkGradient = Color(0xFFCC0099);
   // static const Color blueGradient = Color(0xFF6600FF);
